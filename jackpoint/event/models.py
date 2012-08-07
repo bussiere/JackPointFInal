@@ -34,6 +34,3 @@ class Event(models.Model):
     # Why not faire le save et ecrire le texte en fonciton de la langue ?
     def __unicode__(self):
         return str(self.User.id)
-    
-    
-class Avis():

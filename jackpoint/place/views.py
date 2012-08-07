@@ -25,3 +25,6 @@ def viewid(request,id):
 @login_required
 def addplace(request):
     return render_to_response('addplace.html',RequestContext(request))
+@login_required
+def editplace(request):
+    return render_to_response('addplace.html',RequestContext(request))

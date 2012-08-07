@@ -25,7 +25,11 @@ urlpatterns = patterns('',
     url(r'^mp/(?P<id>\d+)/$','mp.views.index'),
     url(r'^jack/view/(?P<id>\d+)/$','jack.views.viewid'),
     url(r'^place/view/(?P<id>\d+)/$','place.views.viewid'),
-    url(r'^place/add/$','place.views.editJack'),
+    url(r'^place/add/$','place.views.addplace'),
+    url(r'^place/edit/$','place.views.editplace'),
+    url(r'^event/view/(?P<id>\d+)/$','event.views.viewid'),
+    url(r'^event/add/$','event.views.addevent'),
+    url(r'^event/edit/$','event.views.editevent'),
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
 )

@@ -134,6 +134,7 @@ INSTALLED_APPS = (
     'event',
     'place',
     'lieu',
+    'south',
     'django.contrib.admin',
     'django.contrib.admindocs',
     #'south',
