@@ -128,5 +128,5 @@ def editJack(request):
         ItemFormSet = ItemFormSet(prefix='item', initial=initial)
         
         print CaracFormSet.management_form
-        formJack = JackRegisterForm({'jack_email': item.Nom, 'jack_username':item.id,'jack_Avatar':level,'jack_Bio':level})
+        formJack = JackRegisterForm({'jack_email': user.get_profile.Email, 'jack_username':user.get_profile.Pseudo,'jack_Avatar':user.get_profile.Avatar,'jack_Bio':user.get_profile.Bio})
         return render_to_response('jackedit.html', {"CaracFormSet":CaracFormSet, 'SkillFormSet':SkillFormSet, 'ItemFormSet':ItemFormSet, 'formJack':formJack}, RequestContext(request))
