@@ -7,6 +7,9 @@ from django.db.models import Q
 #TODO
 #A affiner si la personne peut repondre totalement a la question ou pas.
 def sendnotification(question,threadEngine):
+    #TODO
+    #A factoriser pour la recherche
+    # Rajouter les tags
     skills = question.Skills.all()
     items = question.Items.all()
     caracs = question.Caracs.all()

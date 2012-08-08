@@ -17,3 +17,12 @@ class Notification(models.Model):
     Commentaire = models.TextField(max_length=256, null=True, blank=True)
     def __unicode__(self):
         return self.Nom
+
+class PlaceNotification(models.Model):  
+    user = models.OneToOneField(User)  
+    Nom = models.CharField(max_length=128)
+    Texte = models.TextField(max_length=256, null=True, blank=True)
+    Place = models.ManyToManyField("place.Place", blank=True, null=True)
+    Commentaire = models.TextField(max_length=256, null=True, blank=True)
+    def __unicode__(self):
+        return self.Nom

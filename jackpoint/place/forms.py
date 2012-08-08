@@ -15,6 +15,7 @@ class AddPlaceForm(forms.Form):
     Region = forms.CharField(label='Region')
     Pays = forms.CharField(label='Pays')
     Telephone = forms.CharField(label='Tel')
+    Email = forms.CharField(label='Email')
     LundiM1 = forms.CharField(label='LundiM1')
     LundiM2 = forms.CharField(label='LundiM2')
     LundiAM1 = forms.CharField(label='LundiAM1')

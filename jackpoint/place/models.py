@@ -40,6 +40,8 @@ class Place(models.Model):
     Createur =  models.ForeignKey(User, unique=False, null=True, blank=True)  
     Avis = models.ManyToManyField(Avis, null=True, blank=True)
     Private = models.BooleanField(default=False)
+    Telephone =  models.TextField(max_length=32, null=True, blank=True)
+    Email =  models.TextField(max_length=1024, null=True, blank=True)
     #TODO
     # Why not faire le save et ecrire le texte en fonciton de la langue ?
     def __unicode__(self):
