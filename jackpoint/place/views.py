@@ -68,13 +68,18 @@ def addplace(request):
         print skills
         print items
         place = {}
+        place['Categorie'] = []
         place['Nom'] = request.POST['Nom']
+        place['Categorie'].append(request.POST['Categorie1'])
+        place['Categorie'].append(request.POST['Categorie2'])
+        place['Categorie'].append(request.POST['Categorie3'])
         place['GPS'] = request.POST['GPS']
         place['Geohash'] = request.POST['Hash']
-        place['Adresse1'] = request.POST['AD1']
-        place['Adresse2'] = request.POST['AD2']
-        place['Adresse3'] = request.POST['AD3']
-        place['Adresse4'] = request.POST['AD4']
+        place['Adresse'] = []
+        place['Adresse'].append(request.POST['AD1'])
+        place['Adresse'].append(request.POST['AD2'])
+        place['Adresse'].append(request.POST['AD3'])
+        place['Adresse'].append(request.POST['AD4'])
         place['CP'] = request.POST['CP']
         place['Ville'] = request.POST['Ville']
         place['Region'] = request.POST['Region']

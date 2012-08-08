@@ -4,11 +4,18 @@ from django import forms
 
 class AddPlaceForm(forms.Form):
     Nom = forms.CharField(label='Nom')
+    Categorie1 = forms.CharField(label='Categorie1')
+    Categorie2 = forms.CharField(label='Categorie2')
+    Categorie3 = forms.CharField(label='Categorie3')
     GPS = forms.CharField(label='GPS')
     Geohash = forms.CharField(label='Hash')
+    NumAD1 = forms.CharField(label='NumAD1')
     Adresse1 = forms.CharField(label='AD1')
+    NumAD2 = forms.CharField(label='NumAD2')
     Adresse2 = forms.CharField(label='AD2')
+    NumAD3 = forms.CharField(label='NumAD3')
     Adresse3 = forms.CharField(label='AD3')
+    NumAD4 = forms.CharField(label='NumAD4')
     Adresse4 = forms.CharField(label='AD4')
     CP = forms.CharField(label='CP')
     Ville = forms.CharField(label='Ville')
