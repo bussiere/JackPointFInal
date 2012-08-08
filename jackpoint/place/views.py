@@ -16,7 +16,10 @@ from jack.scripts import enregistrementJack
 from django.http import HttpResponseRedirect
 from jack.models import CaracUser,SkillUser,ItemUser
 from place.models import Place
-
+from carac.forms import CaracFormChoice
+from skill.forms import SkillFormChoice
+from item.forms import ItemFormChoice
+from place.form import AddPlaceForm 
 @login_required
 def viewid(request,id):
     place = Place.objects.get(id=id)
@@ -24,7 +27,30 @@ def viewid(request,id):
 
 @login_required
 def addplace(request):
-    return render_to_response('addplace.html',RequestContext(request))
+    Caracs = Carac.objects.all()
+    Skills = Skill.objects.all()
+    Items = Item.objects.all()
+    initial = []
+    for carac in Caracs :
+        initial.append({'carac': carac.Nom,'id':carac.id})
+    CaracFormSet = formset_factory(CaracFormChoice, extra=0)
+    CaracFormSet = CaracFormSet(prefix='carac',initial=initial)
+    initial = []
+    # algo de skills a revoir pour le classement
+    for skill in Skills :
+        initial.append({'skill': skill.Nom,'id':skill.id})
+    SkillFormSet = formset_factory(SkillFormChoice, extra=0)
+    SkillFormSet = SkillFormSet(prefix='skill',initial=initial)
+    initial = []
+    for item in Items :
+        initial.append({'item': item.Nom,'id':item.id})
+    ItemFormSet = formset_factory(ItemFormChoice, extra=0)
+    ItemFormSet = ItemFormSet(prefix='item',initial=initial)
+    form = AddPlaceForm()
+    return render_to_response('addplace.html',{
+        'form': form,"CaracFormSet":CaracFormSet,'SkillFormSet':SkillFormSet,'ItemFormSet':ItemFormSet
+    },RequestContext(request))
+
 @login_required
 def editplace(request):
     return render_to_response('addplace.html',RequestContext(request))

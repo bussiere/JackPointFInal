@@ -86,6 +86,8 @@ def editJack(request):
         return HttpResponseRedirect('../../../X/')
     else :
         user = User.objects.get(id=request.user.id)
+        #TODO
+        # a factoriser
         Caracs = Carac.objects.all()
         Skills = Skill.objects.all()
         Items = Item.objects.all()

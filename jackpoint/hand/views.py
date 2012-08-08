@@ -111,6 +111,8 @@ def ask(request):
     
     
     form = AskForm() # An unbound form
+    #TODO
+    # A factoriser
     Caracs = Carac.objects.all()
     Skills = Skill.objects.all()
     Items = Item.objects.all()
