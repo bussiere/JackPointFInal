@@ -80,6 +80,11 @@ def addplace(request):
         place['Adresse'].append(request.POST['AD2'])
         place['Adresse'].append(request.POST['AD3'])
         place['Adresse'].append(request.POST['AD4'])
+        place['NumAdresse'] = []
+        place['NumAdresse'].append(request.POST['NumAD1'])
+        place['NumAdresse'].append(request.POST['NumAD2'])
+        place['NumAdresse'].append(request.POST['NumAD3'])
+        place['NumAdresse'].append(request.POST['NumAD4'])
         place['CP'] = request.POST['CP']
         place['Ville'] = request.POST['Ville']
         place['Region'] = request.POST['Region']

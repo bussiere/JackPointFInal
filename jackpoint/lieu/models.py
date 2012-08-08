@@ -22,21 +22,22 @@ class Rue(models.Model):
 
 class Adresse(models.Model):
     Numero = models.TextField(max_length=1024, null=True, blank=True)
+    GeoHash = models.ForeignKey(Geohash,null=True, blank=True)
+    GPS = models.ForeignKey(GPS,null=True, blank=True)
     Rue = models.ForeignKey(Rue,null=True, blank=True)
     def __unicode__(self):
         return str(self.Numero + " " + self.Rue)
 
-
-class Ville(models.Model):
-    Nom = models.TextField(max_length=1024, null=True, blank=True)
-    def __unicode__(self):
-        return str(self.Nom)
-
-
 class CP(models.Model):
+     GeoHash = models.ForeignKey(Geohash,null=True, blank=True)
+     GPS = models.ForeignKey(GPS,null=True, blank=True)
      Nom = models.TextField(max_length=1024, null=True, blank=True)
      def __unicode__(self):
         return str(self.CP)
+
+
+
+
      
 
 class Pays(models.Model):
@@ -67,6 +68,13 @@ class Station(models.Model):
     def __unicode__(self):
         return str(self.Nom)
     
+class Ville(models.Model):
+    GeoHash = models.ForeignKey(Geohash,null=True, blank=True)
+    GPS = models.ForeignKey(GPS,null=True, blank=True)
+    Nom = models.TextField(max_length=1024, null=True, blank=True)
+    def __unicode__(self):
+        return str(self.Nom)
+
 class Lieu(models.Model):
     GeoHash = models.ForeignKey(Geohash,null=True, blank=True)
     GPS = models.ForeignKey(GPS,null=True, blank=True)

@@ -18,9 +18,14 @@ from tag.models import Tag
 from engine.models import ThreadEngine
 from engine.script import sendnotificationPlace
 from place.models import Place,CategoriePlace
+from lieu.models import Lieu,Adresse
+from lieu.models import GPS,Geohash
+
 
 def enregistrementPlace(request,caracs,skills,items,tags,place):
     Place = Place.objects.create() 
+    Lieu = Lieu.objects.create() 
+    Lieu.save()
     Place.save()
     Place.Createur =  User.objects.get(id=request.user.id)
     Place.Nom = place['Nom']
@@ -33,12 +38,38 @@ def enregistrementPlace(request,caracs,skills,items,tags,place):
             result.save()
         Place.Categorie.add(result)
     Place.save()
-    place['GPS']
-    place['Geohash'] 
-    place['Adresse1']
-    place['Adresse2'] 
-    place['Adresse3'] 
-    place['Adresse4'] 
+    try :
+            result = GPS.objects.get(Coord=place['GPS'])
+    except :
+            result = GPS.objects.create(Coord=place['GPS'])
+            result.save()
+    Lieu.GPS = result
+    Lieu.save()
+    try :
+            result = Geohash.objects.get(Hash=place['Geohash'])
+    except :
+            result = Geohash.objects.create(Hash=place['Geohash'])
+            result.save()
+    Lieu.Geohash = result
+    Lieu.save()
+    i = 0
+    for adresse in place['Adresse'] :
+        numero = place['NumAdresse'][i]
+        try :
+            result = Adresse.objects.get(Rue=adresse,Numero=numero)
+        except :
+            result = Adresse.objects.create(Rue=adresse,Numero=numero)
+            result.save()
+        i += 1
+        Lieu.Adresse.add(result)
+    
+    try :
+            result = Adresse.objects.get(Rue=adresse,Numero=numero)
+    except :
+            result = Adresse.objects.create(Rue=adresse,Numero=numero)
+            result.save()
+        i += 1
+    Lieu.CP.add(result)
     place['CP']
     place['Ville'] 
     place['Region'] 
