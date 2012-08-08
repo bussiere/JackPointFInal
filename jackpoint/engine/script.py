@@ -111,3 +111,6 @@ def sendnotification(question,threadEngine):
             pass
         notification.Texte = text    
         notification.save()
+
+def sendnotificationPlace():
+    pass

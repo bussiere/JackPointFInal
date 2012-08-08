@@ -80,6 +80,7 @@ class Lieu(models.Model):
     GPS = models.ForeignKey(GPS,null=True, blank=True)
     Adresse = models.ManyToManyField(Adresse,null=True, blank=True)
     Ville  = models.ForeignKey(Ville,null=True, blank=True)
+    CP = models.ForeignKey(CP,null=True, blank=True)
     Region = models.ForeignKey(Region,null=True, blank=True)
     Pays = models.ForeignKey(Pays,null=True, blank=True)
     Station = models.ManyToManyField(Station,null=True, blank=True)

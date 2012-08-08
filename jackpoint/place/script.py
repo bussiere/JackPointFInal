@@ -19,10 +19,12 @@ from engine.models import ThreadEngine
 from engine.script import sendnotificationPlace
 from place.models import Place,CategoriePlace
 from lieu.models import Lieu,Adresse
-from lieu.models import GPS,Geohash
+from lieu.models import GPS,Geohash,CP,Ville,Region,Pays
 
 
 def enregistrementPlace(request,caracs,skills,items,tags,place):
+    #Todo
+    #Faire les verifs avant si existe pas Lieu et tout
     Place = Place.objects.create() 
     Lieu = Lieu.objects.create() 
     Lieu.save()
@@ -62,23 +64,57 @@ def enregistrementPlace(request,caracs,skills,items,tags,place):
             result.save()
         i += 1
         Lieu.Adresse.add(result)
+        Lieu.save()
     
     try :
-            result = Adresse.objects.get(Rue=adresse,Numero=numero)
+            result = CP.objects.get(Nom=place['CP'])
     except :
-            result = Adresse.objects.create(Rue=adresse,Numero=numero)
+            result = CP.objects.create(Nom=place['CP'])
             result.save()
-        i += 1
-    Lieu.CP.add(result)
-    place['CP']
-    place['Ville'] 
-    place['Region'] 
-    place['Pays'] 
-    place['Telephone'] 
-    place['Email'] 
+    Lieu.CP = result
+    Lieu.save()
+    
+    try :
+            result = Ville.objects.get(Nom=place['Ville'] )
+    except :
+            result = Ville.objects.create(Nom=place['Ville'] )
+            result.save()
+    Lieu.Ville = result
+    Lieu.save()
+    
+    try :
+            result = Region.objects.get(Nom=place['Region'])
+    except :
+            result = Region.objects.create(Nom=place['Region'])
+            result.save()
+    Lieu.Region = result
+    Lieu.save()
+    
+    try :
+            result = Pays.objects.get(Nom=place['Pays'])
+    except :
+            result = Pays.objects.create(Nom=place['Pays'])
+            result.save()
+    Lieu.Pays = result
+    Lieu.save()
+    Place.Lieu = Lieu
+    Place.Telephone = place['Telephone'] 
+    Place.Email =  place['Email'] 
+    Place.Commentaire =  place['Commentaire'] 
+    Place.save()
+   
+   
+    try :
+            result = Pays.objects.get(DebutH=place['LundiM1'],)
+    except :
+            result = Pays.objects.create(Nom=place['Pays'])
+            result.save()
     place['LundiM1'] 
     place['LundiM2'] 
     place['LundiAM1'] 
+    place['LundiAM2'] 
+    
+    
     place['MardiM1'] 
     place['MardiM2'] 
     place['MardiAM1'] 
@@ -114,7 +150,7 @@ def enregistrementPlace(request,caracs,skills,items,tags,place):
     place['Transport4'] 
     place['Transport5'] 
     place['Transport6']
-    place['Commentaire'] 
+   
     Place.save()
     #TODO
     #Factoriser et expliquer les tags
