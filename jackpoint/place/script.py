@@ -20,6 +20,7 @@ from engine.script import sendnotificationPlace
 from place.models import Place,CategoriePlace
 from lieu.models import Lieu,Adresse
 from lieu.models import GPS,Geohash,CP,Ville,Region,Pays
+from date.models import Plage
 
 
 def enregistrementPlace(request,caracs,skills,items,tags,place):
@@ -103,12 +104,19 @@ def enregistrementPlace(request,caracs,skills,items,tags,place):
     Place.Commentaire =  place['Commentaire'] 
     Place.save()
    
-   
+   #En cours
+    plage = []
     try :
-            result = Pays.objects.get(DebutH=place['LundiM1'],DebutM= place['LundiM11'],FinH=place['LundiM2'], FinM=place['LundiM22'])
+            result = Plage.objects.get(DebutH=place['LundiM1'],DebutM= place['LundiM11'],FinH=place['LundiM2'], FinM=place['LundiM22'])
     except :
-            result = Pays.objects.create(Nom=place['Pays'])
+            result = Plage.objects.create(DebutH=place['LundiM1'],DebutM= place['LundiM11'],FinH=place['LundiM2'], FinM=place['LundiM22'])
             result.save()
+    plage.append(result)
+    try :
+            result2 = Plage.objects.get(DebutH=place['LundiM1'],DebutM= place['LundiM11'],FinH=place['LundiM2'], FinM=place['LundiM22'])
+    except :
+            result2 = Plage.objects.create(DebutH=place['LundiM1'],DebutM= place['LundiM11'],FinH=place['LundiM2'], FinM=place['LundiM22'])
+            result2.save()
 
     place['LundiAM1'] = request.POST['LundiAM1']
     place['LundiAM11'] = request.POST['LundiAM11']

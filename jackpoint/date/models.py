@@ -114,12 +114,12 @@ class Plage(models.Model):
 
 class Jour(models.Model):
     Jour = models.IntegerField(choices=Jour)
-    Horaire = models.ManyToManyField("Plage", null=True, blank=True)
+    
     def __unicode__(self):
         return str("%d %s"%(self.Jour,self.Horaire))
 
 class Horaire(models.Model):
-    Jours = models.ManyToManyField("Jour", null=True, blank=True)
+    Horaire = models.ManyToManyField("Plage", null=True, blank=True)
     def __unicode__(self):
         return str("%s"%(self.Jours))
 
@@ -127,6 +127,7 @@ class Horaire(models.Model):
 class DateJourHoraire(models.Model):
     Date = models.DateField()
     Jour = models.ForeignKey('Jour')
+    Horaire = models.ManyToManyField("Plage", null=True, blank=True)
     def __unicode__(self):
         return str(self.Date + " " + self.Jour)
     
