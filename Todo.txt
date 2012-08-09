@@ -1,1 +1,8 @@
+Rajout de forum, news, tips en plus de lieux et event et on freeze.
+Debug + graphisme.
+
 Rajout d'un forum, de news , des tips, et de projets.
+Page perso.
+groupes achats groupes et sms aussi.
+
+twitter like ?
