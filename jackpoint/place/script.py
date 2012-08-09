@@ -105,6 +105,8 @@ def enregistrementPlace(request,caracs,skills,items,tags,place):
     Place.save()
    
    #En cours
+   #TODO
+   # A refaire en propre.
     plage = []
     try :
             result = Plage.objects.get(DebutH=place['LundiM1'],DebutM= place['LundiM11'],FinH=place['LundiM2'], FinM=place['LundiM22'])
@@ -112,11 +114,13 @@ def enregistrementPlace(request,caracs,skills,items,tags,place):
             result = Plage.objects.create(DebutH=place['LundiM1'],DebutM= place['LundiM11'],FinH=place['LundiM2'], FinM=place['LundiM22'])
             result.save()
     plage.append(result)
+    
     try :
             result2 = Plage.objects.get(DebutH=place['LundiM1'],DebutM= place['LundiM11'],FinH=place['LundiM2'], FinM=place['LundiM22'])
     except :
             result2 = Plage.objects.create(DebutH=place['LundiM1'],DebutM= place['LundiM11'],FinH=place['LundiM2'], FinM=place['LundiM22'])
             result2.save()
+    Vote.objects.get(options__in=[1, 2], choosen=1)
 
     place['LundiAM1'] = request.POST['LundiAM1']
     place['LundiAM11'] = request.POST['LundiAM11']
