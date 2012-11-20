@@ -1,364 +1,84 @@
-        try:
-            place['Categorie'] = []
-        except:
-            pass
-        try:
-            place['Nom'] = request.POST['Nom']
-        except:
-            pass
-        try:
-            place['Categorie'].append(request.POST['Categorie1'])
-        except:
-            pass
-        try:
-            place['Categorie'].append(request.POST['Categorie2'])
-        except:
-            pass
-        try:
-            place['Categorie'].append(request.POST['Categorie3'])
-        except:
-            pass
-        try:
-            place['GPS'] = request.POST['GPS']
-        except:
-            pass
-        try:
-            place['Geohash'] = request.POST['Hash']
-        except:
-            pass
-        try:
-            place['Adresse'] = []
-        except:
-            pass
-        try:
-            place['Adresse'].append(request.POST['AD1'])
-        except:
-            pass
-        try:
-            place['Adresse'].append(request.POST['AD2'])
-        except:
-            pass
-        try:
-            place['Adresse'].append(request.POST['AD3'])
-        except:
-            pass
-        try:
-            place['Adresse'].append(request.POST['AD4'])
-        except:
-            pass
-        try:
-            place['NumAdresse'] = []
-        except:
-            pass
-        try:
-            place['NumAdresse'].append(request.POST['NumAD1'])
-        except:
-            pass
-        try:
-            place['NumAdresse'].append(request.POST['NumAD2'])
-        except:
-            pass
-        try:
-            place['NumAdresse'].append(request.POST['NumAD3'])
-        except:
-            pass
-        try:
-            place['NumAdresse'].append(request.POST['NumAD4'])
-        except:
-            pass
-        try:
-            place['CP'] = request.POST['CP']
-        except:
-            pass
-        try:
-            place['Ville'] = request.POST['Ville']
-        except:
-            pass
-        try:
-            place['Region'] = request.POST['Region']
-        except:
-            pass
-        try:
-            place['Pays'] = request.POST['Pays']
-        except:
-            pass
-        try:
-            place['Telephone'] = request.POST['Tel']
-        except:
-            pass
-        try:
-            place['Email'] = request.POST['Email']
-        except:
-            pass
-        try:
-            place['LundiM1'] = request.POST['LundiM1']
-        except:
-            pass
-        try:
-            place['LundiM11'] = request.POST['LundiM11']
-        except:
-            pass
-        try:
-            place['LundiM2'] = request.POST['LundiM2']
-        except:
-            pass
-        try:
-            place['LundiM22'] = request.POST['LundiM22']
-        except:
-            pass
-        try:
-            place['LundiAM1'] = request.POST['LundiAM1']
-        except:
-            pass
-        try:
-            place['LundiAM11'] = request.POST['LundiAM11']
-        except:
-            pass
-        try:
-            place['LundiAM2'] = request.POST['LundiAM2']
-        except:
-            pass
-        try:
-            place['LundiAM22'] = request.POST['LundiAM22']
-        except:
-            pass
-        try:
-            place['MardiM1'] = request.POST['MardiM1']
-        except:
-            pass
-        try:
-            place['MardiM11'] = request.POST['MardiM11']
-        except:
-            pass
-        try:
-            place['MardiM2'] = request.POST['MardiM2']
-        except:
-            pass
-        try:
-            place['MardiM22'] = request.POST['MardiM22']
-        except:
-            pass
-        try:
-            place['MardiAM1'] = request.POST['MardiAM1']
-        except:
-            pass
-        try:
-            place['MardiAM11'] = request.POST['MardiAM11']
-        except:
-            pass
-        try:
-            place['MardiAM2'] = request.POST['MardiAM2']
-        except:
-            pass
-        try:
-            place['MardiAM22'] = request.POST['MardiAM22']
-        except:
-            pass
-        try:
-            place['MercrediM1'] = request.POST['MercrediM1']
-        except:
-            pass
-        try:
-            place['MercrediM11'] = request.POST['MercrediM11']
-        except:
-            pass
-        try:
-            place['MercrediM2'] = request.POST['MercrediM2']
-        except:
-            pass
-        try:
-            place['MercrediM22'] = request.POST['MercrediM22']
-        except:
-            pass
-        try:
-            place['MercrediAM1'] = request.POST['MercrediAM1']
-        except:
-            pass
-        try:
-            place['MercrediAM11'] = request.POST['MercrediAM11']
-        except:
-            pass
-        try:
-            place['MercrediAM2'] = request.POST['MercrediAM2']
-        except:
-            pass
-        try:
-            place['MercrediAM22'] = request.POST['MercrediAM22']
-        except:
-            pass
-        try:
-            place['JeudiM1'] = request.POST['JeudiM1']
-        except:
-            pass
-        try:
-            place['JeudiM11'] = request.POST['JeudiM11']
-        except:
-            pass
-        try:
-            place['JeudiM2'] = request.POST['JeudiM2']
-        except:
-            pass
-        try:
-            place['JeudiM22'] = request.POST['JeudiM22']
-        except:
-            pass
-        try:
-            place['JeudiAM1'] = request.POST['JeudiAM1']
-        except:
-            pass
-        try:
-            place['JeudiAM11'] = request.POST['JeudiAM11']
-        except:
-            pass
-        try:
-            place['JeudiAM2'] = request.POST['JeudiAM2']
-        except:
-            pass
-        try:
-            place['JeudiAM22'] = request.POST['JeudiAM22']
-        except:
-            pass
-        try:
-            place['VendrediM1'] = request.POST['VendrediM1']
-        except:
-            pass
-        try:
-            place['VendrediM11'] = request.POST['VendrediM11']
-        except:
-            pass
-        try:
-            place['VendrediM2'] = request.POST['VendrediM2']
-        except:
-            pass
-        try:
-            place['VendrediM22'] = request.POST['VendrediM22']
-        except:
-            pass
-        try:
-            place['VendrediAM1'] = request.POST['VendrediAM1']
-        except:
-            pass
-        try:
-            place['VendrediAM11'] = request.POST['VendrediAM11']
-        except:
-            pass
-        try:
-            place['VendrediAM2'] = request.POST['VendrediAM2']
-        except:
-            pass
-        try:
-            place['VendrediAM22'] = request.POST['VendrediAM22']
-        except:
-            pass
-        try:
-            place['SamediM1'] = request.POST['SamediM1']
-        except:
-            pass
-        try:
-            place['SamediM11'] = request.POST['SamediM11']
-        except:
-            pass
-        try:
-            place['SamediM2'] = request.POST['SamediM2']
-        except:
-            pass
-        try:
-            place['SamediM22'] = request.POST['SamediM22']
-        except:
-            pass
-        try:
-            place['SamediAM1'] = request.POST['SamediAM1']
-        except:
-            pass
-        try:
-            place['SamediAM11'] = request.POST['SamediAM11']
-        except:
-            pass
-        try:
-            place['SamediAM2'] = request.POST['SamediAM2']
-        except:
-            pass
-        try:
-            place['SamediAM22'] = request.POST['SamediAM22']
-        except:
-            pass
-        try:
-            place['DimancheM1'] = request.POST['DimancheM1']
-        except:
-            pass
-        try:
-            place['DimancheM11'] = request.POST['DimancheM11']
-        except:
-            pass
-        try:
-            place['DimancheM2'] = request.POST['DimancheM2']
-        except:
-            pass
-        try:
-            place['DimancheM22'] = request.POST['DimancheM22']
-        except:
-            pass
-        try:
-            place['DimancheAM1'] = request.POST['DimancheAM1']
-        except:
-            pass
-        try:
-            place['DimancheAM11'] = request.POST['DimancheAM11']
-        except:
-            pass
-        try:
-            place['DimancheAM2'] = request.POST['DimancheAM2']
-        except:
-            pass
-        try:
-            place['DimancheAM22'] = request.POST['DimancheAM22']
-        except:
-            pass
-        try:
-            place['URL1'] = request.POST['URL1']
-        except:
-            pass
-        try:
-            place['URL2'] = request.POST['URL2']
-        except:
-            pass
-        try:
-            place['URL3'] = request.POST['URL3']
-        except:
-            pass
-        try:
-            place['URL4'] = request.POST['URL4']
-        except:
-            pass
-        try:
-            place['URL5'] = request.POST['URL5']
-        except:
-            pass
-        try:
-            place['Transport1'] = request.POST['Transport1']
-        except:
-            pass
-        try:
-            place['Transport2'] = request.POST['Transport2']
-        except:
-            pass
-        try:
-            place['Transport3'] = request.POST['Transport3']
-        except:
-            pass
-        try:
-            place['Transport4'] = request.POST['Transport4']
-        except:
-            pass
-        try:
-            place['Transport5'] = request.POST['Transport5']
-        except:
-            pass
-        try:
-            place['Transport6'] = request.POST['Transport6']
-        except:
-            pass
-        try:
-            place['Commentaire'] = request.POST['Commentaire']
-        except:
-            pass
+    try :
+            result = Plage.objects.get(DebutH=place['LundiM1'],DebutM= place['LundiM11'],FinH=place['LundiM2'], FinM=place['LundiM22'])
+    except :
+            result = Plage.objects.create(DebutH=place['LundiM1'],DebutM= place['LundiM11'],FinH=place['LundiM2'], FinM=place['LundiM22'])
+            result.save()
+    plage.append(result)
+    try :
+            result = Plage.objects.get(DebutH=place['LundiAM1'],DebutM= place['LundiAM11'],FinH=place['LundiAM2'], FinM=place['LundiAM22'])
+    except :
+            result = Plage.objects.create(DebutH=place['LundiAM1'],DebutM= place['LundiAM11'],FinH=place['LundiAM2'], FinM=place['LundiAM22'])
+            result.save()
+    plage.append(result)
+    try :
+            result = Plage.objects.get(DebutH=place['MardiM1'],DebutM= place['MardiM11'],FinH=place['MardiM2'], FinM=place['MardiM22'])
+    except :
+            result = Plage.objects.create(DebutH=place['MardiM1'],DebutM= place['MardiM11'],FinH=place['MardiM2'], FinM=place['MardiM22'])
+            result.save()
+    plage.append(result)
+    try :
+            result = Plage.objects.get(DebutH=place['MardiAM1'],DebutM= place['MardiAM11'],FinH=place['MardiAM2'], FinM=place['MardiAM22'])
+    except :
+            result = Plage.objects.create(DebutH=place['MardiAM1'],DebutM= place['MardiAM11'],FinH=place['MardiAM2'], FinM=place['MardiAM22'])
+            result.save()
+    plage.append(result)
+    try :
+            result = Plage.objects.get(DebutH=place['MercrediM1'],DebutM= place['MercrediM11'],FinH=place['MercrediM2'], FinM=place['MercrediM22'])
+    except :
+            result = Plage.objects.create(DebutH=place['MercrediM1'],DebutM= place['MercrediM11'],FinH=place['MercrediM2'], FinM=place['MercrediM22'])
+            result.save()
+    plage.append(result)
+    try :
+            result = Plage.objects.get(DebutH=place['MercrediAM1'],DebutM= place['MercrediAM11'],FinH=place['MercrediAM2'], FinM=place['MercrediAM22'])
+    except :
+            result = Plage.objects.create(DebutH=place['MercrediAM1'],DebutM= place['MercrediAM11'],FinH=place['MercrediAM2'], FinM=place['MercrediAM22'])
+            result.save()
+    plage.append(result)
+    try :
+            result = Plage.objects.get(DebutH=place['JeudiM1'],DebutM= place['JeudiM11'],FinH=place['JeudiM2'], FinM=place['JeudiM22'])
+    except :
+            result = Plage.objects.create(DebutH=place['JeudiM1'],DebutM= place['JeudiM11'],FinH=place['JeudiM2'], FinM=place['JeudiM22'])
+            result.save()
+    plage.append(result)
+    try :
+            result = Plage.objects.get(DebutH=place['JeudiAM1'],DebutM= place['JeudiAM11'],FinH=place['JeudiAM2'], FinM=place['JeudiAM22'])
+    except :
+            result = Plage.objects.create(DebutH=place['JeudiAM1'],DebutM= place['JeudiAM11'],FinH=place['JeudiAM2'], FinM=place['JeudiAM22'])
+            result.save()
+    plage.append(result)
+    try :
+            result = Plage.objects.get(DebutH=place['VendrediM1'],DebutM= place['VendrediM11'],FinH=place['VendrediM2'], FinM=place['VendrediM22'])
+    except :
+            result = Plage.objects.create(DebutH=place['VendrediM1'],DebutM= place['VendrediM11'],FinH=place['VendrediM2'], FinM=place['VendrediM22'])
+            result.save()
+    plage.append(result)
+    try :
+            result = Plage.objects.get(DebutH=place['VendrediAM1'],DebutM= place['VendrediAM11'],FinH=place['VendrediAM2'], FinM=place['VendrediAM22'])
+    except :
+            result = Plage.objects.create(DebutH=place['VendrediAM1'],DebutM= place['VendrediAM11'],FinH=place['VendrediAM2'], FinM=place['VendrediAM22'])
+            result.save()
+    plage.append(result)
+    try :
+            result = Plage.objects.get(DebutH=place['SamediM1'],DebutM= place['SamediM11'],FinH=place['SamediM2'], FinM=place['SamediM22'])
+    except :
+            result = Plage.objects.create(DebutH=place['SamediM1'],DebutM= place['SamediM11'],FinH=place['SamediM2'], FinM=place['SamediM22'])
+            result.save()
+    plage.append(result)
+    try :
+            result = Plage.objects.get(DebutH=place['SamediAM1'],DebutM= place['SamediAM11'],FinH=place['SamediAM2'], FinM=place['SamediAM22'])
+    except :
+            result = Plage.objects.create(DebutH=place['SamediAM1'],DebutM= place['SamediAM11'],FinH=place['SamediAM2'], FinM=place['SamediAM22'])
+            result.save()
+    plage.append(result)
+    try :
+            result = Plage.objects.get(DebutH=place['DimancheM1'],DebutM= place['DimancheM11'],FinH=place['DimancheM2'], FinM=place['DimancheM22'])
+    except :
+            result = Plage.objects.create(DebutH=place['DimancheM1'],DebutM= place['DimancheM11'],FinH=place['DimancheM2'], FinM=place['DimancheM22'])
+            result.save()
+    plage.append(result)
+    try :
+            result = Plage.objects.get(DebutH=place['DimancheAM1'],DebutM= place['DimancheAM11'],FinH=place['DimancheAM2'], FinM=place['DimancheAM22'])
+    except :
+            result = Plage.objects.create(DebutH=place['DimancheAM1'],DebutM= place['DimancheAM11'],FinH=place['DimancheAM2'], FinM=place['DimancheAM22'])
+            result.save()
+    plage.append(result)

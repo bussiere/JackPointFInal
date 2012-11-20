@@ -114,62 +114,85 @@ def enregistrementPlace(request,caracs,skills,items,tags,place):
             result = Plage.objects.create(DebutH=place['LundiM1'],DebutM= place['LundiM11'],FinH=place['LundiM2'], FinM=place['LundiM22'])
             result.save()
     plage.append(result)
-    
+    try :
+            result = Plage.objects.get(DebutH=place['LundiAM1'],DebutM= place['LundiAM11'],FinH=place['LundiAM2'], FinM=place['LundiAM22'])
+    except :
+            result = Plage.objects.create(DebutH=place['LundiAM1'],DebutM= place['LundiAM11'],FinH=place['LundiAM2'], FinM=place['LundiAM22'])
+            result.save()
+    plage.append(result)
+    try :
+            result = Plage.objects.get(DebutH=place['MardiM1'],DebutM= place['MardiM11'],FinH=place['MardiM2'], FinM=place['MardiM22'])
+    except :
+            result = Plage.objects.create(DebutH=place['MardiM1'],DebutM= place['MardiM11'],FinH=place['MardiM2'], FinM=place['MardiM22'])
+            result.save()
+    plage.append(result)
+    try :
+            result = Plage.objects.get(DebutH=place['MardiAM1'],DebutM= place['MardiAM11'],FinH=place['MardiAM2'], FinM=place['MardiAM22'])
+    except :
+            result = Plage.objects.create(DebutH=place['MardiAM1'],DebutM= place['MardiAM11'],FinH=place['MardiAM2'], FinM=place['MardiAM22'])
+            result.save()
+    plage.append(result)
+    try :
+            result = Plage.objects.get(DebutH=place['MercrediM1'],DebutM= place['MercrediM11'],FinH=place['MercrediM2'], FinM=place['MercrediM22'])
+    except :
+            result = Plage.objects.create(DebutH=place['MercrediM1'],DebutM= place['MercrediM11'],FinH=place['MercrediM2'], FinM=place['MercrediM22'])
+            result.save()
+    plage.append(result)
+    try :
+            result = Plage.objects.get(DebutH=place['MercrediAM1'],DebutM= place['MercrediAM11'],FinH=place['MercrediAM2'], FinM=place['MercrediAM22'])
+    except :
+            result = Plage.objects.create(DebutH=place['MercrediAM1'],DebutM= place['MercrediAM11'],FinH=place['MercrediAM2'], FinM=place['MercrediAM22'])
+            result.save()
+    plage.append(result)
+    try :
+            result = Plage.objects.get(DebutH=place['JeudiM1'],DebutM= place['JeudiM11'],FinH=place['JeudiM2'], FinM=place['JeudiM22'])
+    except :
+            result = Plage.objects.create(DebutH=place['JeudiM1'],DebutM= place['JeudiM11'],FinH=place['JeudiM2'], FinM=place['JeudiM22'])
+            result.save()
+    plage.append(result)
+    try :
+            result = Plage.objects.get(DebutH=place['JeudiAM1'],DebutM= place['JeudiAM11'],FinH=place['JeudiAM2'], FinM=place['JeudiAM22'])
+    except :
+            result = Plage.objects.create(DebutH=place['JeudiAM1'],DebutM= place['JeudiAM11'],FinH=place['JeudiAM2'], FinM=place['JeudiAM22'])
+            result.save()
+    plage.append(result)
+    try :
+            result = Plage.objects.get(DebutH=place['VendrediM1'],DebutM= place['VendrediM11'],FinH=place['VendrediM2'], FinM=place['VendrediM22'])
+    except :
+            result = Plage.objects.create(DebutH=place['VendrediM1'],DebutM= place['VendrediM11'],FinH=place['VendrediM2'], FinM=place['VendrediM22'])
+            result.save()
+    plage.append(result)
+    try :
+            result = Plage.objects.get(DebutH=place['VendrediAM1'],DebutM= place['VendrediAM11'],FinH=place['VendrediAM2'], FinM=place['VendrediAM22'])
+    except :
+            result = Plage.objects.create(DebutH=place['VendrediAM1'],DebutM= place['VendrediAM11'],FinH=place['VendrediAM2'], FinM=place['VendrediAM22'])
+            result.save()
+    plage.append(result)
+    try :
+            result = Plage.objects.get(DebutH=place['SamediM1'],DebutM= place['SamediM11'],FinH=place['SamediM2'], FinM=place['SamediM22'])
+    except :
+            result = Plage.objects.create(DebutH=place['SamediM1'],DebutM= place['SamediM11'],FinH=place['SamediM2'], FinM=place['SamediM22'])
+            result.save()
+    plage.append(result)
+    try :
+            result = Plage.objects.get(DebutH=place['SamediAM1'],DebutM= place['SamediAM11'],FinH=place['SamediAM2'], FinM=place['SamediAM22'])
+    except :
+            result = Plage.objects.create(DebutH=place['SamediAM1'],DebutM= place['SamediAM11'],FinH=place['SamediAM2'], FinM=place['SamediAM22'])
+            result.save()
+    plage.append(result)
+    try :
+            result = Plage.objects.get(DebutH=place['DimancheM1'],DebutM= place['DimancheM11'],FinH=place['DimancheM2'], FinM=place['DimancheM22'])
+    except :
+            result = Plage.objects.create(DebutH=place['DimancheM1'],DebutM= place['DimancheM11'],FinH=place['DimancheM2'], FinM=place['DimancheM22'])
+            result.save()
+    plage.append(result)
+    try :
+            result = Plage.objects.get(DebutH=place['DimancheAM1'],DebutM= place['DimancheAM11'],FinH=place['DimancheAM2'], FinM=place['DimancheAM22'])
+    except :
+            result = Plage.objects.create(DebutH=place['DimancheAM1'],DebutM= place['DimancheAM11'],FinH=place['DimancheAM2'], FinM=place['DimancheAM22'])
+            result.save()
+    plage.append(result)
 
-
-
-    place['LundiAM1'] = request.POST['LundiAM1']
-    place['LundiAM11'] = request.POST['LundiAM11']
-    place['LundiAM2'] = request.POST['LundiAM2']
-    place['LundiAM22'] = request.POST['LundiAM22']
-    place['MardiM1'] = request.POST['MardiM1']
-    place['MardiM11'] = request.POST['MardiM11']
-    place['MardiM2'] = request.POST['MardiM2']
-    place['MardiM22'] = request.POST['MardiM22']
-    place['MardiAM1'] = request.POST['MardiAM1']
-    place['MardiAM11'] = request.POST['MardiAM11']
-    place['MardiAM2'] = request.POST['MardiAM2']
-    place['MardiAM22'] = request.POST['MardiAM22']
-    place['MercrediM1'] = request.POST['MercrediM1']
-    place['MercrediM11'] = request.POST['MercrediM11']
-    place['MercrediM2'] = request.POST['MercrediM2']
-    place['MercrediM22'] = request.POST['MercrediM22']
-    place['MercrediAM1'] = request.POST['MercrediAM1']
-    place['MercrediAM11'] = request.POST['MercrediAM11']
-    place['MercrediAM2'] = request.POST['MercrediAM2']
-    place['MercrediAM22'] = request.POST['MercrediAM22']
-    place['JeudiM1'] = request.POST['JeudiM1']
-    place['JeudiM11'] = request.POST['JeudiM11']
-    place['JeudiM2'] = request.POST['JeudiM2']
-    place['JeudiM22'] = request.POST['JeudiM22']
-    place['JeudiAM1'] = request.POST['JeudiAM1']
-    place['JeudiAM11'] = request.POST['JeudiAM11']
-    place['JeudiAM2'] = request.POST['JeudiAM2']
-    place['JeudiAM22'] = request.POST['JeudiAM22']
-    place['VendrediM1'] = request.POST['VendrediM1']
-    place['VendrediM11'] = request.POST['VendrediM11']
-    place['VendrediM2'] = request.POST['VendrediM2']
-    place['VendrediM22'] = request.POST['VendrediM22']
-    place['VendrediAM1'] = request.POST['VendrediAM1']
-    place['VendrediAM11'] = request.POST['VendrediAM11']
-    place['VendrediAM2'] = request.POST['VendrediAM2']
-    place['VendrediAM22'] = request.POST['VendrediAM22']
-    place['SamediM1'] = request.POST['SamediM1']
-    place['SamediM11'] = request.POST['SamediM11']
-    place['SamediM2'] = request.POST['SamediM2']
-    place['SamediM22'] = request.POST['SamediM22']
-    place['SamediAM1'] = request.POST['SamediAM1']
-    place['SamediAM11'] = request.POST['SamediAM11']
-    place['SamediAM2'] = request.POST['SamediAM2']
-    place['SamediAM22'] = request.POST['SamediAM22']
-    place['DimancheM1'] = request.POST['DimancheM1']
-    place['DimancheM11'] = request.POST['DimancheM11']
-    place['DimancheM2'] = request.POST['DimancheM2']
-    place['DimancheM22'] = request.POST['DimancheM22']
-    place['DimancheAM1'] = request.POST['DimancheAM1']
-    place['DimancheAM11'] = request.POST['DimancheAM11']
-    place['DimancheAM2'] = request.POST['DimancheAM2']
-    place['DimancheAM22'] = request.POST['DimancheAM22']
     place['URL1'] 
     place['URL2'] 
     place['URL3'] 
