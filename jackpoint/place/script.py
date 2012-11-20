@@ -97,11 +97,37 @@ def enregistrementPlace(request,caracs,skills,items,tags,place):
             result = Pays.objects.create(Nom=place['Pays'])
             result.save()
     Lieu.Pays = result
+        try :
+            typetransport = TypeTransport.objects.get(Nom=place['TypeTransport1'])
+    except :
+            typetransport = TypeTransport.objects.create(Nom=place['TypeTransport1'])
+            typetransport.save()
+    try :
+        ligne = Ligne.objects.get(TypeTransport=typetransport,Nom=place['LigneTransport1'])
+    except :   
+        ligne =  Ligne.objects.create(TypeTransport=typetransport,Nom=place['LigneTransport1'])
+        ligne.save()
+
+    try :
+        ligne = Ligne.objects.get(TypeTransport=typetransport,Nom=place['LigneTransport1'])
+    except :   
+        ligne =  Ligne.objects.create(TypeTransport=typetransport,Nom=place['LigneTransport1'])
+        ligne.save()
+
+
+    try :
+        station = Station.objects.get(Ligne__in=ligne,Nom=Transport2)
+    except :
+        station = Station.objects.create(Nom=Transport2)
+        station.Ligne.add(ligne)
+        station.save()
+    Lieu.Station.add(station)
+
     Lieu.save()
     Place.Lieu = Lieu
     Place.Telephone = place['Telephone'] 
     Place.Email =  place['Email'] 
-    Place.Commentaire =  place['Commentaire'] 
+    Place.Commentaire =  place['Commentaire']
     Place.save()
    
    #En cours
@@ -225,26 +251,8 @@ def enregistrementPlace(request,caracs,skills,items,tags,place):
     Place.Url.add(place['URL5'])
     Place.save()
 
-    
-    place['TypeTransport1']
-    place['LigneTransport1']
-    place['Transport1']
-    place['TypeTransport2']
-    place['LigneTransport2']
-    place['Transport2']
-    place['TypeTransport3']
-    place['LigneTransport3']
-    place['Transport3']
-    place['TypeTransport4']
-    place['LigneTransport4']
-    place['Transport4']
-    place['TypeTransport5']
-    place['LigneTransport5']
-    place['Transport5']
-    place['TypeTransport6']
-    place['LigneTransport6']
-    place['Transport6']
-   
+
+
     Place.save()
     #TODO
     #Factoriser et expliquer les tags
