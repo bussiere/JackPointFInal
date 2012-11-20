@@ -120,7 +120,7 @@ def enregistrementPlace(request,caracs,skills,items,tags,place):
     except :
             result2 = Plage.objects.create(DebutH=place['LundiM1'],DebutM= place['LundiM11'],FinH=place['LundiM2'], FinM=place['LundiM22'])
             result2.save()
-    Vote.objects.get(options__in=[1, 2], choosen=1)
+
 
     place['LundiAM1'] = request.POST['LundiAM1']
     place['LundiAM11'] = request.POST['LundiAM11']
