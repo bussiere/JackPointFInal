@@ -29,7 +29,9 @@ class Event(models.Model):
     Going =  models.ManyToManyField(User, unique=False, null=True, blank=True,related_name="Going")
     Horaire = models.ManyToManyField('date.DateJourHoraire',null=True, blank=True)
     Place = models.ManyToManyField('place.Place',null=True, blank=True)
-    Createur = models.ForeignKey(User, unique=False, null=True, blank=True)  
+    Createur = models.ForeignKey('jack.Createur',null=True, blank=True)
+    Editeur = models.ForeignKey('jack.Editeur',null=True, blank=True)    
+    Date = models.DateTimeField(null=True, blank=True)  
     #TODO
     # Why not faire le save et ecrire le texte en fonciton de la langue ?
     def __unicode__(self):

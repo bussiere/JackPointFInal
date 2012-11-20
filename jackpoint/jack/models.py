@@ -48,8 +48,7 @@ class CaracUser(models.Model):
         for c in self.carac.all() :
             t = c 
         return "%s %d %r"%(c.Nom,self.Level,self.Private)
-    
-    
+
 class UserProfile(models.Model):  
     user = models.OneToOneField(User)  
     #other fields here
@@ -68,6 +67,13 @@ class UserProfile(models.Model):
 
     def __str__(self):  
           return "%s's profile" % self.user  
+class Createur(models.Model):  
+    User =  models.ForeignKey(UserProfile, unique=False, null=True, blank=True)
+    Date = models.DateTimeField(null=True, blank=True)
+
+class Editeur(models.Model):  
+    User =  models.ForeignKey(UserProfile, unique=False, null=True, blank=True)
+    Date = models.DateTimeField(null=True, blank=True)
 
 def create_user_profile(sender, instance, created, **kwargs):  
     if created:  

@@ -16,6 +16,7 @@ class Question(models.Model):
     Intitule = models.TextField(null=True, blank=True)
     Text = models.TextField(null=True, blank=True)
     Url = models.TextField(null=True, blank=True)
+    Date = models.DateTimeField(null=True, blank=True)
 
 class Answer(models.Model):  
     user  = models.ForeignKey(User, unique=False, null=True, blank=True)  
@@ -24,3 +25,4 @@ class Answer(models.Model):
     Url = models.TextField(null=True, blank=True)
     Answer = models.ManyToManyField("self", related_name="AnswerToAnswer",null=True, blank=True)
     Question = models.ManyToManyField("Question", null=True, blank=True)
+    Date = models.DateTimeField(null=True, blank=True)
