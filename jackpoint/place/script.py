@@ -21,6 +21,8 @@ from place.models import Place,CategoriePlace
 from lieu.models import Lieu,Adresse
 from lieu.models import GPS,Geohash,CP,Ville,Region,Pays
 from date.models import Plage
+from engine.script import sendnotificationPlace
+
 
 
 def enregistrementPlace(request,caracs,skills,items,tags,place):
@@ -97,7 +99,9 @@ def enregistrementPlace(request,caracs,skills,items,tags,place):
             result = Pays.objects.create(Nom=place['Pays'])
             result.save()
     Lieu.Pays = result
-        try :
+
+    # a optimiser
+    try :
             typetransport = TypeTransport.objects.get(Nom=place['TypeTransport1'])
     except :
             typetransport = TypeTransport.objects.create(Nom=place['TypeTransport1'])
@@ -107,21 +111,99 @@ def enregistrementPlace(request,caracs,skills,items,tags,place):
     except :   
         ligne =  Ligne.objects.create(TypeTransport=typetransport,Nom=place['LigneTransport1'])
         ligne.save()
-
     try :
-        ligne = Ligne.objects.get(TypeTransport=typetransport,Nom=place['LigneTransport1'])
-    except :   
-        ligne =  Ligne.objects.create(TypeTransport=typetransport,Nom=place['LigneTransport1'])
-        ligne.save()
-
-
-    try :
-        station = Station.objects.get(Ligne__in=ligne,Nom=Transport2)
+        station = Station.objects.get(Ligne__in=ligne,Nom=place['Transport1'])
     except :
-        station = Station.objects.create(Nom=Transport2)
+        station = Station.objects.create(Nom=place['Transport1'])
         station.Ligne.add(ligne)
         station.save()
     Lieu.Station.add(station)
+    try :
+            typetransport = TypeTransport.objects.get(Nom=place['TypeTransport2'])
+    except :
+            typetransport = TypeTransport.objects.create(Nom=place['TypeTransport2'])
+            typetransport.save()
+    try :
+        ligne = Ligne.objects.get(TypeTransport=typetransport,Nom=place['LigneTransport2'])
+    except :   
+        ligne =  Ligne.objects.create(TypeTransport=typetransport,Nom=place['LigneTransport2'])
+        ligne.save()
+    try :
+        station = Station.objects.get(Ligne__in=ligne,Nom=place['Transport2'])
+    except :
+        station = Station.objects.create(Nom=place['Transport2'])
+        station.Ligne.add(ligne)
+        station.save()
+    Lieu.Station.add(station)
+    try :
+            typetransport = TypeTransport.objects.get(Nom=place['TypeTransport3'])
+    except :
+            typetransport = TypeTransport.objects.create(Nom=place['TypeTransport3'])
+            typetransport.save()
+    try :
+        ligne = Ligne.objects.get(TypeTransport=typetransport,Nom=place['LigneTransport3'])
+    except :   
+        ligne =  Ligne.objects.create(TypeTransport=typetransport,Nom=place['LigneTransport3'])
+        ligne.save()
+    try :
+        station = Station.objects.get(Ligne__in=ligne,Nom=place['Transport3'])
+    except :
+        station = Station.objects.create(Nom=place['Transport3'])
+        station.Ligne.add(ligne)
+        station.save()
+    Lieu.Station.add(station)
+    try :
+            typetransport = TypeTransport.objects.get(Nom=place['TypeTransport4'])
+    except :
+            typetransport = TypeTransport.objects.create(Nom=place['TypeTransport4'])
+            typetransport.save()
+    try :
+        ligne = Ligne.objects.get(TypeTransport=typetransport,Nom=place['LigneTransport4'])
+    except :   
+        ligne =  Ligne.objects.create(TypeTransport=typetransport,Nom=place['LigneTransport4'])
+        ligne.save()
+    try :
+        station = Station.objects.get(Ligne__in=ligne,Nom=place['Transport4'])
+    except :
+        station = Station.objects.create(Nom=place['Transport4'])
+        station.Ligne.add(ligne)
+        station.save()
+    Lieu.Station.add(station)
+    try :
+            typetransport = TypeTransport.objects.get(Nom=place['TypeTransport5'])
+    except :
+            typetransport = TypeTransport.objects.create(Nom=place['TypeTransport5'])
+            typetransport.save()
+    try :
+        ligne = Ligne.objects.get(TypeTransport=typetransport,Nom=place['LigneTransport5'])
+    except :   
+        ligne =  Ligne.objects.create(TypeTransport=typetransport,Nom=place['LigneTransport5'])
+        ligne.save()
+    try :
+        station = Station.objects.get(Ligne__in=ligne,Nom=place['Transport5'])
+    except :
+        station = Station.objects.create(Nom=place['Transport5'])
+        station.Ligne.add(ligne)
+        station.save()
+    Lieu.Station.add(station)
+    try :
+            typetransport = TypeTransport.objects.get(Nom=place['TypeTransport6'])
+    except :
+            typetransport = TypeTransport.objects.create(Nom=place['TypeTransport6'])
+            typetransport.save()
+    try :
+        ligne = Ligne.objects.get(TypeTransport=typetransport,Nom=place['LigneTransport6'])
+    except :   
+        ligne =  Ligne.objects.create(TypeTransport=typetransport,Nom=place['LigneTransport6'])
+        ligne.save()
+    try :
+        station = Station.objects.get(Ligne__in=ligne,Nom=place['Transport6'])
+    except :
+        station = Station.objects.create(Nom=place['Transport6'])
+        station.Ligne.add(ligne)
+        station.save()
+    Lieu.Station.add(station)
+
 
     Lieu.save()
     Place.Lieu = Lieu
@@ -303,4 +385,4 @@ def enregistrementPlace(request,caracs,skills,items,tags,place):
             result.save()
         Place.Items.add(result)
     Place.save()
-    sendnotificationPlace()
+    sendnotificationPlace(Place)

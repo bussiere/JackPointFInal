@@ -1,90 +1,102 @@
-        try:
-            place['TypeTransport1'] = request.POST['TypeTransport1']
-        except:
-            pass
-        try:
-            place['LigneTransport1'] = request.POST['LigneTransport1']
-        except:
-            pass
-        try:
-            place['Transport1'] = request.POST['Transport1']
-        except:
-            pass
-        try:
-            place['TypeTransport2'] = request.POST['TypeTransport2']
-        except:
-            pass
-        try:
-            place['LigneTransport2'] = request.POST['LigneTransport2']
-        except:
-            pass
-        try:
-            place['Transport2'] = request.POST['Transport2']
-        except:
-            pass
-        try:
-            place['TypeTransport3'] = request.POST['TypeTransport3']
-        except:
-            pass
-        try:
-            place['LigneTransport3'] = request.POST['LigneTransport3']
-        except:
-            pass
-        try:
-            place['Transport3'] = request.POST['Transport3']
-        except:
-            pass
-        try:
-            place['TypeTransport4'] = request.POST['TypeTransport4']
-        except:
-            pass
-        try:
-            place['LigneTransport4'] = request.POST['LigneTransport4']
-        except:
-            pass
-        try:
-            place['Transport4'] = request.POST['Transport4']
-        except:
-            pass
-        try:
-            place['TypeTransport5'] = request.POST['TypeTransport5']
-        except:
-            pass
-        try:
-            place['LigneTransport5'] = request.POST['LigneTransport5']
-        except:
-            pass
-        try:
-            place['Transport5'] = request.POST['Transport5']
-        except:
-            pass
-        try:
-            place['TypeTransport6'] = request.POST['TypeTransport6']
-        except:
-            pass
-        try:
-            place['LigneTransport6'] = request.POST['LigneTransport6']
-        except:
-            pass
-        try:
-            place['Transport6'] = request.POST['Transport6']
-        except:
-            pass
-    place['TypeTransport1']
-    place['LigneTransport1']
-    place['Transport1']
-    place['TypeTransport2']
-    place['LigneTransport2']
-    place['Transport2']
-    place['TypeTransport3']
-    place['LigneTransport3']
-    place['Transport3']
-    place['TypeTransport4']
-    place['LigneTransport4']
-    place['Transport4']
-    place['TypeTransport5']
-    place['LigneTransport5']
-    place['Transport5']
-    place['TypeTransport6']
-    place['LigneTransport6']
-    place['Transport6']
+    try :
+            typetransport = TypeTransport.objects.get(Nom=place['TypeTransport1'])
+    except :
+            typetransport = TypeTransport.objects.create(Nom=place['TypeTransport1'])
+            typetransport.save()
+    try :
+        ligne = Ligne.objects.get(TypeTransport=typetransport,Nom=place['LigneTransport1'])
+    except :   
+        ligne =  Ligne.objects.create(TypeTransport=typetransport,Nom=place['LigneTransport1'])
+        ligne.save()
+    try :
+        station = Station.objects.get(Ligne__in=ligne,Nom=place['Transport1'])
+    except :
+        station = Station.objects.create(Nom=place['Transport1'])
+        station.Ligne.add(ligne)
+        station.save()
+    Lieu.Station.add(station)
+    try :
+            typetransport = TypeTransport.objects.get(Nom=place['TypeTransport2'])
+    except :
+            typetransport = TypeTransport.objects.create(Nom=place['TypeTransport2'])
+            typetransport.save()
+    try :
+        ligne = Ligne.objects.get(TypeTransport=typetransport,Nom=place['LigneTransport2'])
+    except :   
+        ligne =  Ligne.objects.create(TypeTransport=typetransport,Nom=place['LigneTransport2'])
+        ligne.save()
+    try :
+        station = Station.objects.get(Ligne__in=ligne,Nom=place['Transport2'])
+    except :
+        station = Station.objects.create(Nom=place['Transport2'])
+        station.Ligne.add(ligne)
+        station.save()
+    Lieu.Station.add(station)
+    try :
+            typetransport = TypeTransport.objects.get(Nom=place['TypeTransport3'])
+    except :
+            typetransport = TypeTransport.objects.create(Nom=place['TypeTransport3'])
+            typetransport.save()
+    try :
+        ligne = Ligne.objects.get(TypeTransport=typetransport,Nom=place['LigneTransport3'])
+    except :   
+        ligne =  Ligne.objects.create(TypeTransport=typetransport,Nom=place['LigneTransport3'])
+        ligne.save()
+    try :
+        station = Station.objects.get(Ligne__in=ligne,Nom=place['Transport3'])
+    except :
+        station = Station.objects.create(Nom=place['Transport3'])
+        station.Ligne.add(ligne)
+        station.save()
+    Lieu.Station.add(station)
+    try :
+            typetransport = TypeTransport.objects.get(Nom=place['TypeTransport4'])
+    except :
+            typetransport = TypeTransport.objects.create(Nom=place['TypeTransport4'])
+            typetransport.save()
+    try :
+        ligne = Ligne.objects.get(TypeTransport=typetransport,Nom=place['LigneTransport4'])
+    except :   
+        ligne =  Ligne.objects.create(TypeTransport=typetransport,Nom=place['LigneTransport4'])
+        ligne.save()
+    try :
+        station = Station.objects.get(Ligne__in=ligne,Nom=place['Transport4'])
+    except :
+        station = Station.objects.create(Nom=place['Transport4'])
+        station.Ligne.add(ligne)
+        station.save()
+    Lieu.Station.add(station)
+    try :
+            typetransport = TypeTransport.objects.get(Nom=place['TypeTransport5'])
+    except :
+            typetransport = TypeTransport.objects.create(Nom=place['TypeTransport5'])
+            typetransport.save()
+    try :
+        ligne = Ligne.objects.get(TypeTransport=typetransport,Nom=place['LigneTransport5'])
+    except :   
+        ligne =  Ligne.objects.create(TypeTransport=typetransport,Nom=place['LigneTransport5'])
+        ligne.save()
+    try :
+        station = Station.objects.get(Ligne__in=ligne,Nom=place['Transport5'])
+    except :
+        station = Station.objects.create(Nom=place['Transport5'])
+        station.Ligne.add(ligne)
+        station.save()
+    Lieu.Station.add(station)
+    try :
+            typetransport = TypeTransport.objects.get(Nom=place['TypeTransport6'])
+    except :
+            typetransport = TypeTransport.objects.create(Nom=place['TypeTransport6'])
+            typetransport.save()
+    try :
+        ligne = Ligne.objects.get(TypeTransport=typetransport,Nom=place['LigneTransport6'])
+    except :   
+        ligne =  Ligne.objects.create(TypeTransport=typetransport,Nom=place['LigneTransport6'])
+        ligne.save()
+    try :
+        station = Station.objects.get(Ligne__in=ligne,Nom=place['Transport6'])
+    except :
+        station = Station.objects.create(Nom=place['Transport6'])
+        station.Ligne.add(ligne)
+        station.save()
+    Lieu.Station.add(station)

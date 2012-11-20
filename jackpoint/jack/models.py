@@ -12,7 +12,7 @@ class ItemUser(models.Model):
     Private = models.BooleanField()
 
 LevelSkill = (
-    (0, 'None'),
+    (0, 'None Mais interesse'),
     (1, 'Debutant'),
     (2, 'Moyen'),
     (3, 'Doue'),
