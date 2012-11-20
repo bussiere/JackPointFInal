@@ -404,8 +404,24 @@ def addplace(request):
             place['URL5'] = request.POST['URL5']
         except:
             pass
+                try:
+            place['TypeTransport1'] = request.POST['TypeTransport1']
+        except:
+            pass
+        try:
+            place['LigneTransport1'] = request.POST['LigneTransport1']
+        except:
+            pass
         try:
             place['Transport1'] = request.POST['Transport1']
+        except:
+            pass
+        try:
+            place['TypeTransport2'] = request.POST['TypeTransport2']
+        except:
+            pass
+        try:
+            place['LigneTransport2'] = request.POST['LigneTransport2']
         except:
             pass
         try:
@@ -413,7 +429,23 @@ def addplace(request):
         except:
             pass
         try:
+            place['TypeTransport3'] = request.POST['TypeTransport3']
+        except:
+            pass
+        try:
+            place['LigneTransport3'] = request.POST['LigneTransport3']
+        except:
+            pass
+        try:
             place['Transport3'] = request.POST['Transport3']
+        except:
+            pass
+        try:
+            place['TypeTransport4'] = request.POST['TypeTransport4']
+        except:
+            pass
+        try:
+            place['LigneTransport4'] = request.POST['LigneTransport4']
         except:
             pass
         try:
@@ -421,7 +453,23 @@ def addplace(request):
         except:
             pass
         try:
+            place['TypeTransport5'] = request.POST['TypeTransport5']
+        except:
+            pass
+        try:
+            place['LigneTransport5'] = request.POST['LigneTransport5']
+        except:
+            pass
+        try:
             place['Transport5'] = request.POST['Transport5']
+        except:
+            pass
+        try:
+            place['TypeTransport6'] = request.POST['TypeTransport6']
+        except:
+            pass
+        try:
+            place['LigneTransport6'] = request.POST['LigneTransport6']
         except:
             pass
         try:
