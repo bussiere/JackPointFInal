@@ -115,11 +115,7 @@ def enregistrementPlace(request,caracs,skills,items,tags,place):
             result.save()
     plage.append(result)
     
-    try :
-            result2 = Plage.objects.get(DebutH=place['LundiM1'],DebutM= place['LundiM11'],FinH=place['LundiM2'], FinM=place['LundiM22'])
-    except :
-            result2 = Plage.objects.create(DebutH=place['LundiM1'],DebutM= place['LundiM11'],FinH=place['LundiM2'], FinM=place['LundiM22'])
-            result2.save()
+
 
 
     place['LundiAM1'] = request.POST['LundiAM1']

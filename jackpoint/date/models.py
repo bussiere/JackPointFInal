@@ -125,7 +125,7 @@ class Horaire(models.Model):
 
     
 class DateJourHoraire(models.Model):
-    Date = models.DateField()
+    Date = models.DateField(null=True, blank=True)
     Jour = models.ForeignKey('Jour')
     Horaire = models.ManyToManyField("Plage", null=True, blank=True)
     def __unicode__(self):
