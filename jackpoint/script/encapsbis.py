@@ -14,7 +14,11 @@ while i < 6 :
         except:
             pass\n"""%(ti,i,ti,i)
 
-
+i = 0
+while i < 6 :
+    i += 1
+    for ti in tab :
+        t += """    place['%s%i']\n"""%(ti,i)
 mon_fichier2 = open("result.txt", "w")
 mon_fichier2.write(t)
 mon_fichier2.close()

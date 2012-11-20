@@ -480,7 +480,6 @@ def addplace(request):
             place['Commentaire'] = request.POST['Commentaire']
         except:
             pass
-
         tags = request.POST['Tags']
         retour = enregistrementPlace(request,caracs,skills,items,tags,place)  
         return HttpResponseRedirect('../../place/view/') # Redirect after POST
