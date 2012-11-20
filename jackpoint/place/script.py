@@ -192,6 +192,31 @@ def enregistrementPlace(request,caracs,skills,items,tags,place):
             result = Plage.objects.create(DebutH=place['DimancheAM1'],DebutM= place['DimancheAM11'],FinH=place['DimancheAM2'], FinM=place['DimancheAM22'])
             result.save()
     plage.append(result)
+    Jour = [
+    'Lundi',
+    'Mardi',
+    'Mercredi',
+    'Jeudi',
+    'Vendredi',
+    'Samedi',
+    'Dimanche']
+    i = 0
+    for j in jour :
+        #TODO
+        #A optimiser
+        try :
+            jour = Jour.objects.get(Jour=i+1)
+        except :
+            jour = Jour.objects.create(Jour=i+1)
+        try :
+            datejourhaoraire = DateJourHoraire.Object.get(Plage__in=[plage[i+1],plage[i]],Jour=jour)
+        except :
+            datejourhaoraire = DateJourHoraire.Object.create(Jour=jour)
+            datejourhaoraire.Plage.add(plage[i+1])
+            datejourhaoraire.Plage.add(plage[i])
+            datejourhaoraire.save()
+        Place.Horaire.add(datejourhaoraire)
+        Place.save()
 
     place['URL1'] 
     place['URL2'] 
