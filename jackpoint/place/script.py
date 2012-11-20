@@ -218,11 +218,14 @@ def enregistrementPlace(request,caracs,skills,items,tags,place):
         Place.Horaire.add(datejourhaoraire)
         Place.save()
 
-    place['URL1'] 
-    place['URL2'] 
-    place['URL3'] 
-    place['URL4'] 
-    place['URL5'] 
+    Place.Url.add(place['URL1'])
+    Place.Url.add(place['URL2']) 
+    Place.Url.add(place['URL3']) 
+    Place.Url.add(place['URL4'])
+    Place.Url.add(place['URL5'])
+    Place.save()
+
+    
     place['TypeTransport1']
     place['LigneTransport1']
     place['Transport1']
