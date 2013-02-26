@@ -2,8 +2,9 @@ from django.http import HttpResponseRedirect
 from engine.forms import LoginForm
 from django.shortcuts import render_to_response
 from django.template import RequestContext
-from django.contrib.auth import authenticate, login
-
+from django.contrib.auth import authenticate, login,logout
+from django.shortcuts import redirect
+from django.core.urlresolvers import reverse
 
 def index(request):
     if request.user.is_authenticated():
@@ -25,9 +26,8 @@ def index(request):
         'form': form
     },RequestContext(request))
 
-def logout(request):
+def logoutpage(request):
     logout(request)
-    response = redirect('engine.views.index')
-    return response
+    return  HttpResponseRedirect(reverse('engine.views.index'))
 
 

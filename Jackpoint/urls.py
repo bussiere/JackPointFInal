@@ -8,8 +8,8 @@ urlpatterns = patterns('',
     # Examples:
     # url(r'^$', 'views.home', name='home'),
     # url(r'^Jackpoint/', include('foo.urls')),
-    url(r'^logout/$', 'engine.views.logout',name='engine-logout'),
-    url(r'^$', 'engine.views.index'),
+    url(r'^logout/$', 'engine.views.logoutpage',name='engine-logout'),
+    url(r'^$', 'engine.views.index',name='engine-index'),
     #url(r'^X/$', 'X.views.index'),
     url(r'^invitation/$', 'invitation.views.index'),
     # Uncomment the admin/doc line below to enable admin documentation:
