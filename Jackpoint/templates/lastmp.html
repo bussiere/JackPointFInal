@@ -1,0 +1,11 @@
+  <a href="../mp/0/">Message Recus : ()</a>
+
+{% for  message in messagerecus %}
+<a href="../../jack/view/{{ message.Sender.id }}/">{{ message.Sender }}</a> &nbsp;<a href="../../mp/{{message.Sender.id}}/">MP</a><br>
+{{ message.Texte }}<br>
+{% endfor %}
+Message envoyes :<br>
+{% for  message in messageenvoyes %}
+<a href="../../jack/view/{{ message.Receiver.id }}/">{{ message.Receiver }}</a> &nbsp;<a href="../../mp/{{message.Receiver.id}}/">MP</a><br>
+{{ message.Texte }}<br>
+{% endfor %}

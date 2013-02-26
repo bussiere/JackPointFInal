@@ -1,0 +1,13 @@
+            Vos Items:
+
+  {% for  item in profile.Items.all %}
+
+{% for  it in  item.Item.all %}
+{% if not item.Private %}
+{{ it.Nom  }}<br>
+{% else %}
+Prive : <br>
+{{ it.Nom  }}<br>
+{% endif %}
+{% endfor %}
+{% endfor %}

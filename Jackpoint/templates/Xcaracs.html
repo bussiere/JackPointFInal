@@ -1,0 +1,15 @@
+Vos caracs :
+
+ {% for  carac in profile.Caracs.all %}
+
+{% for  ca in  carac.Carac.all %}
+{% if not carac.Private %}
+{{ ca.Nom  }}:
+{{ carac.Level }}<br>
+{% else %}
+Prive : <br>
+{{ ca.Nom  }}:
+{{ carac.Level }}<br>
+{% endif %}
+{% endfor %}
+{% endfor %}

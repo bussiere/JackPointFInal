@@ -1,0 +1,14 @@
+            Vos Skills :
+{% for  skill in profile.Skills.all %}
+{% for  sk in  skill.Skill.all %}
+{% if not skill.Private  %}
+
+{{ sk.Nom  }}:
+{{ skill.Level }}<br>
+{% else %}
+Prive : <br>
+{{ sk.Nom  }}:
+{{ skill.Level }}<br>
+{% endif %}
+{% endfor %}
+{% endfor %}
